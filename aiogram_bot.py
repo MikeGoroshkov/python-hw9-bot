@@ -61,15 +61,6 @@ async def base_del(message: types.Message):
         await message.reply(f"Удалена запись: {i[0]}, тел. {i[1]}, {i[2]}")
     delete_data(finded)
 
-async def on_startup(_):
-    await bot.send_message("Список команд:\n"
-                        "/help - список команд бота\n"
-                        "/calc мат.выражение - калькулятор\n"
-                        "Работа со справочником:\n"
-                        "/base_add ФИО:тел.номер:коментарий - добавить данные\n"
-                        "/base_show - выводит весь справочник на экран\n"
-                        "/base_find искомое - поиск по справочнику: по имени, фамилии, телефону\n"
-                        "/base_del искомое - поиск и удаление из справочника: удаляет все совпадения")
 
 if __name__ == "__main__":
     executor.start_polling(dp)
